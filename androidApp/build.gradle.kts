@@ -33,6 +33,7 @@ val gitHash = execute("git", "rev-parse", "HEAD").take(7)
 android {
     namespace = "com.shub39.rush"
     compileSdk = libs.versions.compileSdk.get().toInt()
+    compileSdkMinor = 1
 
     defaultConfig {
         applicationId = "com.shub39.rush"
@@ -156,6 +157,8 @@ dependencies {
 
     implementation(projects.androidLibs.visualizerHelper)
     implementation(projects.androidLibs.romanization)
+
+    implementation(project(":island-sdk-compose"))
 
     "playImplementation"(libs.purchases.ui)
     "playImplementation"(libs.purchases)

@@ -27,6 +27,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Essentials island provider: synced lyrics below the island's expanded media player -->
+        <service
+            android:name=".island.RushIslandService"
+            android:exported="true"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.sameerasw.island.PROVIDER" />
+            </intent-filter>
+            <meta-data
+                android:name="com.sameerasw.island.provider.label"
+                android:value="Rush lyrics" />
+            <meta-data
+                android:name="com.sameerasw.island.provider.description"
+                android:value="Shows the current synced lyric line below the media player. Needs rush mode on in Rush." />
+        </service>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

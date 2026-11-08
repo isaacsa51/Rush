@@ -34,7 +34,7 @@ plugins {
 allprojects {
     apply { plugin(rootProject.libs.plugins.spotless.get().pluginId) }
     configure<SpotlessExtension> {
-        if (project.path != ":androidLibs:visualizer-helper") {
+        if (project.path !in setOf(":androidLibs:visualizer-helper", ":island-sdk", ":island-sdk-compose")) {
             kotlin {
                 ktfmt(libs.versions.ktfmt.get()).kotlinlangStyle()
                 target("src/**/*.kt")
