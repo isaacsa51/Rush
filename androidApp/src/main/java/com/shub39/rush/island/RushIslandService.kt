@@ -22,7 +22,6 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -175,7 +174,6 @@ class RushIslandService : ComposeIslandProviderService(), KoinComponent {
                 }
                 .islandSnapshot { host?.snapshot(itemKey, it) }
                 .clip(shape)
-                .background(Color.Black)
                 .padding(horizontal = 20.dp, vertical = 12.dp)
         ) {
             AnimatedContent(
